@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    ports:
+      - "443:443"
+    volumes:
+      - "~/Desktop/Inceptio-startsd/srcs/nginx/html"
+    restart: always
+    networks:
+      - network
+
+networks:
+  network:
+    driver: bridge
