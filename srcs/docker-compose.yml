@@ -7,7 +7,7 @@ services:
     ports:
       - "443:443"
     volumes:
-      - "~/Desktop/inception/website:/var/www/html"
+      - wordpress_data:/var/www/html
     restart: always
     networks:
       - network
@@ -18,7 +18,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - "~/Desktop/inception/website:/var/www/html"
+      - wordpress_data:/var/www/html
     networks:
       - network
     restart: always
@@ -42,7 +42,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      -  "~/Desktop/inception/mariadb:/var/lib/mysql"
+      -  db_data:/var/lib/mysql
     restart: always
     networks:
       - network
@@ -55,3 +55,17 @@ services:
 networks:
   network:
     driver: bridge
+
+volumes:
+  db_data: 
+    driver: local
+    driver_opts:
+      type: none
+      device: ~/home/dlanzilo/data/mysql
+      o: bind
+  wordpress_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ~/home/dlanzilo/data/wordpress
+      o: bind
