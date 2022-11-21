@@ -1,6 +1,6 @@
 NAME = inception
 
-all: prune reload
+all:  reload
 
 linux:
 	@ echo "127.0.0.1 dlanzilo.42.fr" >> /etc/hosts

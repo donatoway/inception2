@@ -1,6 +1,64 @@
+<!DOCTYPE html>
 <html>
+    <style>
+        h1
+        {
+            font-size: 55px;
+            color: blue;
+            font-style: inherit;
+            text-align: center;
+        }
+        p
+        {
+            font-size: 40px;
+            color: rgb(13, 13, 13);
+            font-style: oblique;
+        }
+        .button1
+        {
+            border: none;
+            color: rgb(11, 83, 128);
+            padding: 40pcx 60px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 60px;
+            margin: 100px 20px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        body
+        {
+            background-image: url("rain.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .button1
+        {
+            background-color: rgb(177, 229, 239); 
+            color: rgb(41, 88, 163); 
+            border: 2px solid #4CAF50;
+            margin:auto;
+            display:block;
+        }
 
+        .button1:hover
+        {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
 <body>
-    <h1>hello world miao!</h1>
+    <h1>Inception</h1>
+    <p >
+        This project aims to broaden your knowledge of system 
+        administration by using Docker. You will virtualize 
+        several Docker images, creating them in your new personal 
+        virtual machine.
+    </p>
+    <p></p>
+    <button class="button1" value="button1" onclick="window.location.href='http://localhost:8000/';">
+    Wordpress
+    </button>
 </body>
 </html>
