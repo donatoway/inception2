@@ -62,6 +62,7 @@ COPY conf/www.conf /etc/php7/php-fpm.d/www.conf
 
 # static website
 COPY conf/index.html /tmp/index.html
+COPY conf/rain.jpeg /tmp/rain.jpeg
 
 # install wordpress
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
