@@ -7,7 +7,7 @@ services:
     ports:
       - "443:443"
     volumes:
-      - ~/home/dlanzilo/data/wordpress:/var/www/html
+      - wordpress_data:/var/www/html
     restart: always
     networks:
       - network
@@ -18,7 +18,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ~/home/dlanzilo/data/wordpress:/var/www/html
+      - wordpress_data:/var/www/html
     networks:
       - network
     restart: always
@@ -42,7 +42,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ~/home/dlanzilo/data/mysql:/var/lib/mysql
+      - db_data:/var/lib/mysql
     restart: always
     networks:
       - network

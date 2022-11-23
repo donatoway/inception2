@@ -2,19 +2,19 @@ NAME = inception
 
 all:  reload
 
-linux:
+ubuntu:
 	@ echo "127.0.0.1 dlanzilo.42.fr" >> /etc/hosts
 
 stop:
-	@ docker-compose -f srcs/docker-compose.yml down
+	@ sudo docker-compose -f srcs/docker-compose.yml down
 
-clean: stop
+clean: stop prune
 	@ rm -rf ~/home/dlanzilo/data/wordpress && rm -rf ~/home/dlanzilo/data/mysql
 
 prune: clean
-	@ docker system prune -f
+	@ sudo docker system prune -af
 
 reload: 
-	@ docker-compose -f srcs/docker-compose.yml up --build
+	@ sudo docker-compose -f srcs/docker-compose.yml up --build
 
-.PHONY: linux stop clean prune reload all
+.PHONY: ubuntu stop clean prune reload all
